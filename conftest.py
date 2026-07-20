@@ -1,7 +1,6 @@
 import pytest
 from selenium import webdriver
-
-BASE_URL = "https://qa-scooter.education-services.ru/"
+from data import BASE_URL
 
 @pytest.fixture
 def driver():
