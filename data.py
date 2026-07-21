@@ -4,6 +4,7 @@
 
 # URL сервиса
 BASE_URL = "https://qa-scooter.education-services.ru/"
+ORDER_PATH = "/order"
 
 # Данные для вопросов
 QUESTIONS_DATA = [

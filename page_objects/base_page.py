@@ -10,6 +10,7 @@ class BasePage:
 
     COOKIE_BUTTON = (By.XPATH, "//button[contains(@class, 'App_CookieButton')]")
     COOKIE_BANNER = (By.XPATH, "//div[contains(@class, 'App_CookieConsent__')]")
+    BODY = (By.TAG_NAME, "body")
     
     def __init__(self, driver):
         self.driver = driver
@@ -57,6 +58,11 @@ class BasePage:
         """Скролл до элемента"""
         element = self.driver.find_element(*locator)
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+
+    @allure.step("Клик по элементу <body> (закрыть календарь/выпадающий список)")
+    def click_body(self):
+        """Клик по тегу body для закрытия календаря или выпадающего списка"""
+        self.click_element(self.BODY)
 
     @allure.step("Получение текущего URL")
     def get_current_url(self):

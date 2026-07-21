@@ -57,7 +57,7 @@ class OrderPage(BasePage):
     def fill_second_page(self, date, rental_period, color, comment):
         """Заполнение второй страницы формы"""
         self.send_keys_to_element(self.DATE_FIELD, date)
-        self.driver.find_element(By.TAG_NAME, "body").click()  # Закрыть календарь
+        self.click_body()  # Закрыть календарь
 
         # Выбор периода аренды
         self.click_element(self.RENTAL_PERIOD_DROPDOWN)
